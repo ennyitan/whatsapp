@@ -1,0 +1,44 @@
+
+    <div class="menu">
+        <div class="profile flex-b pd">
+            <img src="../assets/images/developer.png" alt="" class="img-size-1">
+            <nav>
+                <button class="icon"><i class='fas fa-wifi'></i></button>
+                <button class="icon"><i class="fa-solid fa-plus"></i></button>
+                <button class="icon"><i class='fas fa-ellipsis-h'></i></button>
+            </nav>
+        </div>
+        <form action="" class="search pd">
+            <i><i class='fas fa-search'></i></i>
+            <input class="br-5" type="text" placeholder="Search or start a new chat" id="search" oninput="searching()">
+        </form>
+        <div class="contacts">
+            
+        </div>
+    </div>
+
+    <div class="chat-area">
+        <div class="chat-menu flex-b pd">
+            <img src="../assets/images/developer.png" alt="" class="img-size-1">
+            <div>My Best Friend</div>
+            <nav>
+                <button class="icon"><i class="fa fa-video-camera"></i></button>
+                <button class="icon"><i class='fas fa-phone-alt'></i></button>
+                <button class="icon"><i class='fas fa-search'></i></button>
+                <button class="icon"><i class='fas fa-ellipsis-h'></i></button>
+            </nav>
+        </div>
+        <app-chat-box class="chat-box">
+            
+        </app-chat-box>
+        <div class="chat-options pd flex-b">
+            <button class="icon"><i class='far fa-grin-wink'></i></button>
+            <button class="icon"><i class='fa fa-paperclip'></i></button>
+                
+            <input class="br-5" type="text" id="newMessage" placeholder="Type a message">
+            <button class="icon"><i class='fas fa-microphone'></i></button>
+        </div>
+    </div>
+
+
+    <router-outlet></router-outlet>

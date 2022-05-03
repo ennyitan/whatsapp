@@ -1,0 +1,125 @@
+/* You can add global styles to this file, and also import other style files */
+
+html{
+    font-size: 62.5%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.4rem;
+}
+
+app-root {
+    background-color: rgb(0, 49, 49);
+    color: white;
+    height: 100vh;
+}
+
+input, button {
+    border: 0;
+    outline: 0;
+    color: inherit;
+}
+
+::placeholder {
+    color: inherit;
+}
+
+.flex-b {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-size-1 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+button.icon {
+    font-size: 2rem;
+    color: inherit;
+    border: 0;
+    background-color: inherit;
+}
+
+.pd {
+    padding: 20px;
+}
+
+.pd-p {
+    padding: 5%;
+}
+
+.br-5 {
+    border-radius: 7px;
+}
+
+.contacts {
+    overflow-y: scroll;
+}
+
+.menu {
+    width: 25%;
+    min-width: 200px;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+}
+
+form.search {
+    position: relative;
+}
+
+form.search input {
+    padding: 5% 3% 5% 30px;
+    width: 100%;
+    background-color: rgb(3, 97, 92);
+}
+
+form.search i {
+    position: absolute;
+    top: 50%;
+    transform: translate(70%,-50%);
+}
+
+.contact-info {
+    width: 80%;
+}
+
+.message, .name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.chat-area {
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.chat-box {
+    overflow-y: scroll;
+}
+
+.chat-options input {
+    width: 80%;
+    padding: 1.6rem;
+    background-color: rgb(3, 97, 92);
+}
+
+.msg {
+    position: relative;
+    background-color: rgb(3, 97, 92);
+    width: 60%;
+    max-width: 600px;
+    margin: 5% 10% 5% auto;
+}
+
+.time-stamp{
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+}
