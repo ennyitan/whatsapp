@@ -1,8 +1,8 @@
 
     <div class="menu">
         <div class="profile flex-b pd">
-            <img src="../assets/images/developer.png" alt="" class="img-size-1">
-            <nav>
+            <img src="https://images.pexels.com/photos/3665468/pexels-photo-3665468.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="img-size-1">
+            <nav class="flex-b w-40">
                 <button class="icon"><i class='fas fa-wifi'></i></button>
                 <button class="icon"><i class="fa-solid fa-plus"></i></button>
                 <button class="icon"><i class='fas fa-ellipsis-h'></i></button>
@@ -13,29 +13,39 @@
             <input class="br-5" type="text" placeholder="Search or start a new chat" id="search" oninput="searching()">
         </form>
         <div class="contacts">
-            
+            <div *ngFor="let cow of contacts" class="contact- flex-b pd-sm a-center br-5 gp-5" (click)="setActiveChat(cow.image.medium, cow.name)">
+                    <img src="{{cow.image.medium}}" alt=""  class="img-size-2">
+                    <div style="width: 80%;">{{cow.name}}</div>
+            </div>
         </div>
     </div>
 
     <div class="chat-area">
-        <div class="chat-menu flex-b pd">
-            <img src="../assets/images/developer.png" alt="" class="img-size-1">
-            <div>My Best Friend</div>
-            <nav>
+        <div class="chat-menu flex-b a-center gp-5 pd">
+            <img src="{{activeChat.avatar}}" alt="" class="img-size-1">
+            <div class="f-1">{{activeChat.username}}</div>
+            <nav class="flex-b w-40" style="max-width: 250px;">
                 <button class="icon"><i class="fa fa-video-camera"></i></button>
                 <button class="icon"><i class='fas fa-phone-alt'></i></button>
                 <button class="icon"><i class='fas fa-search'></i></button>
                 <button class="icon"><i class='fas fa-ellipsis-h'></i></button>
             </nav>
         </div>
-        <app-chat-box class="chat-box">
-            
-        </app-chat-box>
+        <div class="chat-box">
+            <div *ngFor="let cow of messages">
+                <div class="msg flex gp-5 pd br-5">
+                    <img src="{{activeChat.avatar}}" alt=""  class="img-size-1">
+                    <div style="width: 80%; padding-top: 1rem;">{{cow}}</div>
+                    <div class="time-stamp">{{todayDate | date:'shortTime'}}</div>
+                </div>
+            </div>
+        </div>
         <div class="chat-options pd flex-b">
             <button class="icon"><i class='far fa-grin-wink'></i></button>
             <button class="icon"><i class='fa fa-paperclip'></i></button>
-                
-            <input class="br-5" type="text" id="newMessage" placeholder="Type a message">
+            <form [formGroup]="newMessage" (ngSubmit)="sendMessage($event)">
+                <input formControlName="message" class="br-5" type="text" id="newMessage" placeholder="Type a message">
+            </form>    
             <button class="icon"><i class='fas fa-microphone'></i></button>
         </div>
     </div>

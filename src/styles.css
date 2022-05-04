@@ -27,14 +27,34 @@ input, button {
     color: inherit;
 }
 
+.flex {
+    display: flex;
+}
+
+.f-1 {flex: 1;}
+
+.w-40 {
+    width: 40%;
+}
+
 .flex-b {
     display: flex;
     justify-content: space-between;
 }
 
+.a-center  {align-items: center;}
+
+.gp-5 {gap: 5%;}
+
 .img-size-1 {
     width: 40px;
     height: 40px;
+    border-radius: 50%;
+}
+
+.img-size-2 {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
 }
 
@@ -47,6 +67,10 @@ button.icon {
 
 .pd {
     padding: 20px;
+}
+
+.pd-sm {
+    padding: 2%;
 }
 
 .pd-p {
@@ -88,6 +112,13 @@ form.search i {
     width: 80%;
 }
 
+.contact- {
+    position: relative;
+    background-color: rgb(3, 97, 92);
+    width: 90%;
+    margin: 5%;
+}
+
 .message, .name {
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -104,8 +135,12 @@ form.search i {
     overflow-y: scroll;
 }
 
-.chat-options input {
+.chat-options form {
     width: 80%;
+}
+
+.chat-options form input {
+    width: 100%;
     padding: 1.6rem;
     background-color: rgb(3, 97, 92);
 }
