@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MyHttpService } from './services/my-http.service';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,18 +12,22 @@ export class AppComponent {
 
   public contacts: any;
 
+  // array containaing all messages
   public messages: string[] = [];
 
   public activeChat: any = {
     username: '',
     avatar: ''
   }
-
+  
+  // set active chat
   setActiveChat(avatar: any, username: any) {
     this.activeChat.username =  username;
     this.activeChat.avatar = avatar;
+    this.messages = []
   }
 
+  // new message sent
   newMessage = new FormGroup({
     message: new FormControl()
   })
@@ -32,7 +35,7 @@ export class AppComponent {
   sendMessage(e: any) {
     e.preventDefault()
     this.messages.push(this.newMessage.value.message)
-    this.newMessage.reset()
+    this.newMessage.reset();
   }
 
   public todayDate = new Date();
